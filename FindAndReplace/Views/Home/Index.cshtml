@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+<div class="jumbotron">
+  <h1>Welcome to the Find and Replace Application</h1>
+  <form action="/findreplace" method="post">
+    <div class="form-group">
+      <label for="word">Enter the word to find:</label>
+      <input name="word" value="" type="text" >
+    </div>
+    <div class="form-group">
+      <label for="replacement">Enter the replacement:</label>
+      <input name="replacement" value="" type="text" >
+    </div>
+    <div class="form-group">
+      <label for="sentence">Enter the sentence to be modified:</label>
+      <input name="sentence" value="" type="text" >
+    </div>
+     <button type="submit">Find and Replace</button>
+     <div id="result">
+       @if(Model != null)
+       {
+        <p>Your Modified sentence is:@Model.FindingAndReplacing()</p>
+       }
+    </div>
+
+  </form>
